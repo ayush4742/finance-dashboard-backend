@@ -7,7 +7,14 @@ const options = {
     info: {
       title: "Finance Dashboard API",
       version: "1.0.0",
-      description: "Finance Dashboard Backend API Documentation",
+      description: `
+Finance Dashboard Backend API Documentation
+
+📘 Full Documentation:
+https://github.com/ayush4742/finance-dashboard-backend/blob/main/README.md
+
+Please read README before testing APIs.
+`,
     },
 
     servers: [
@@ -17,11 +24,6 @@ const options = {
     ],
 
     tags: [
-      {
-        name: "Getting Started",
-        description:
-          "1. Create demo users → POST /api/users/seed \n 2. Login → POST /api/users/login \n 3. Click Authorize and paste token \n 4. Test APIs",
-      },
       {
         name: "Users",
         description: "Authentication & User Management",
