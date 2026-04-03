@@ -1,23 +1,26 @@
 const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 
-const swaggerOptions = {
+const options = {
   definition: {
     openapi: "3.0.0",
     info: {
       title: "Finance Dashboard API",
       version: "1.0.0",
-      description: "Finance Dashboard Backend APIs"
+      description: "Finance Dashboard Backend APIs",
     },
     servers: [
       {
-        url: "https://finance-dashboard-backend-wu1m.onrender.com"
-      }
-    ]
+        url: "https://finance-dashboard-backend-wu1m.onrender.com",
+      },
+    ],
   },
-  apis: ["./routes/*.js"]
+  apis: ["./routes/*.js"],
 };
 
-const swaggerSpec = swaggerJsdoc(swaggerOptions);
+const specs = swaggerJsdoc(options);
 
-module.exports = { swaggerUi, swaggerSpec };
+module.exports = {
+  swaggerUi,
+  specs,
+};
