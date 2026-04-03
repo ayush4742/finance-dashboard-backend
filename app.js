@@ -6,7 +6,7 @@ const userRoutes = require("./routes/userRoutes");
 const transactionRoutes = require("./routes/transactionRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const swaggerUi = require("swagger-ui-express");
-const swaggerDocs = require("./config/swagger");
+const { swaggerUi, specs } = require("./config/swagger");
 
 
 const app = express();
@@ -14,7 +14,7 @@ const app = express();
 connectDB();
 
 app.use(express.json());
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 app.use("/api/users", userRoutes);
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/dashboard", dashboardRoutes);

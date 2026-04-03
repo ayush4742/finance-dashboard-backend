@@ -3,7 +3,7 @@ const swaggerUi = require("swagger-ui-express");
 
 const options = {
   definition: {
-    openapi: "3.0.0",   // IMPORTANT (Don't remove this)
+    openapi: "3.0.0",
     info: {
       title: "Finance Dashboard API",
       version: "1.0.0",
@@ -29,16 +29,4 @@ const options = {
 
 const specs = swaggerJsdoc(options);
 
-module.exports = (app) => {
-  app.use(
-    "/api-docs",
-    swaggerUi.serve,
-    swaggerUi.setup(specs, {
-      explorer: true,
-      swaggerOptions: {
-        docExpansion: "none",
-        defaultModelsExpandDepth: -1
-      }
-    })
-  );
-};
+module.exports = { swaggerUi, specs };
