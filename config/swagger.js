@@ -10,16 +10,22 @@ const options = {
       description: `
 Finance Dashboard Backend API Documentation
 
-📘 Full Documentation:
-https://github.com/ayush4742/finance-dashboard-backend/blob/main/README.md
+📘 **Documentation:**  
+[📖 View Full README Guide](https://github.com/ayush4742/finance-dashboard-backend#readme)
 
-Please read README before testing APIs.
+This API provides role-based financial dashboard functionality including:
+• User Authentication  
+• Role-Based Access Control  
+• Transaction Management  
+• Dashboard Analytics  
+
 `,
     },
 
     servers: [
       {
         url: "https://finance-dashboard-backend-wu1m.onrender.com",
+        description: "Production Server",
       },
     ],
 
