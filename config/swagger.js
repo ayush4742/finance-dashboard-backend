@@ -3,7 +3,7 @@ const swaggerUi = require("swagger-ui-express");
 
 const options = {
   definition: {
-    openapi: "3.0.0",
+    openapi: "3.0.0",   // IMPORTANT (Don't remove this)
     info: {
       title: "Finance Dashboard API",
       version: "1.0.0",
@@ -22,12 +22,7 @@ const options = {
           bearerFormat: "JWT"
         }
       }
-    },
-    security: [
-      {
-        bearerAuth: []
-      }
-    ]
+    }
   },
   apis: ["./routes/*.js"]
 };
@@ -39,13 +34,10 @@ module.exports = (app) => {
     "/api-docs",
     swaggerUi.serve,
     swaggerUi.setup(specs, {
+      explorer: true,
       swaggerOptions: {
-        defaultModelsExpandDepth: -1,   // hide schemas
-        displayRequestDuration: false,
-        docExpansion: "none",           // collapse all
-        filter: true,
-        showExtensions: false,
-        showCommonExtensions: false
+        docExpansion: "none",
+        defaultModelsExpandDepth: -1
       }
     })
   );
