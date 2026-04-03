@@ -11,7 +11,7 @@ const options = {
 Finance Dashboard Backend API Documentation
 
 📘 **Documentation:**  
-[📖 View Full README Guide](https://github.com/ayush4742/finance-dashboard-backend#readme) 
+[📖 View Full README Guide](https://github.com/ayush4742/finance-dashboard-backend?tab=readme-ov-file#-authentication-flow) 
 
 `,
     },
