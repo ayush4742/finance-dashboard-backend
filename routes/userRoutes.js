@@ -46,6 +46,70 @@ router.post("/login", loginUser);
 
 /**
  * @swagger
+ * /api/users/seed:
+ *   post:
+ *     summary: Create demo users (Admin, Analyst, Viewer)
+ *     tags: [Users]
+ *     responses:
+ *       200:
+ *         description: Demo users created successfully
+ */
+router.post("/seed", async (req, res) => {
+  const User = require("../models/User");
+  const bcrypt = require("bcryptjs");
+
+  try {
+
+    const users = [
+      {
+        name: "Admin",
+        email: "admin@gmail.com",
+        password: await bcrypt.hash("123456", 10),
+        role: "admin"
+      },
+      {
+        name: "Analyst",
+        email: "analyst@gmail.com",
+        password: await bcrypt.hash("123456", 10),
+        role: "analyst"
+      },
+      {
+        name: "Viewer",
+        email: "viewer@gmail.com",
+        password: await bcrypt.hash("123456", 10),
+        role: "viewer"
+      }
+    ];
+
+    await User.deleteMany({
+      email: {
+        $in: [
+          "admin@gmail.com",
+          "analyst@gmail.com",
+          "viewer@gmail.com"
+        ]
+      }
+    });
+
+    await User.insertMany(users);
+
+    res.json({
+      success: true,
+      message: "Demo users created successfully"
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+  }
+});
+
+
+
+/**
+ * @swagger
  * /api/users:
  *   post:
  *     summary: Create User (Admin Only)
@@ -133,59 +197,5 @@ router.put("/:id", authMiddleware, authorizeRoles("admin"), updateUser);
  */
 router.delete("/:id", authMiddleware, authorizeRoles("admin"), deleteUser);
 
-/**
- * @swagger
- * /api/users/seed:
- *   post:
- *     summary: Create demo users (Admin, Analyst, Viewer)
- *     tags: [Users]
- *     responses:
- *       200:
- *         description: Demo users created
- */
-router.post("/seed", async (req, res) => {
-  const User = require("../models/User");
-  const bcrypt = require("bcryptjs");
 
-  try {
-
-    const users = [
-      {
-        name: "Admin",
-        email: "admin@gmail.com",
-        password: await bcrypt.hash("123456", 10),
-        role: "admin"
-      },
-      {
-        name: "Analyst",
-        email: "analyst@gmail.com",
-        password: await bcrypt.hash("123456", 10),
-        role: "analyst"
-      },
-      {
-        name: "Viewer",
-        email: "viewer@gmail.com",
-        password: await bcrypt.hash("123456", 10),
-        role: "viewer"
-      }
-    ];
-
-    await User.deleteMany({
-      email: { $in: ["admin@gmail.com","analyst@gmail.com","viewer@gmail.com"] }
-    });
-
-    await User.insertMany(users);
-
-    res.json({
-      success: true,
-      message: "Demo users created successfully"
-    });
-
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message
-    });
-  }
-});
 module.exports = router;
