@@ -11,13 +11,7 @@ const options = {
 Finance Dashboard Backend API Documentation
 
 📘 **Documentation:**  
-[📖 View Full README Guide](https://github.com/ayush4742/finance-dashboard-backend#readme)
-
-This API provides role-based financial dashboard functionality including:
-• User Authentication  
-• Role-Based Access Control  
-• Transaction Management  
-• Dashboard Analytics  
+[📖 View Full README Guide](https://github.com/ayush4742/finance-dashboard-backend#readme) 
 
 `,
     },
