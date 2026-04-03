@@ -1,39 +1,52 @@
-const swaggerJsDoc = require("swagger-jsdoc");
+const swaggerJsdoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
 
-const swaggerOptions = {
+const options = {
   definition: {
     openapi: "3.0.0",
     info: {
       title: "Finance Dashboard API",
       version: "1.0.0",
-      description: "Finance Dashboard Backend APIs",
+      description: "Finance Dashboard Backend APIs"
     },
     servers: [
       {
-        url: "https://finance-dashboard-backend-wu1m.onrender.com",
-      },
+        url: "https://finance-dashboard-backend-wu1m.onrender.com"
+      }
     ],
-
     components: {
       securitySchemes: {
         bearerAuth: {
           type: "http",
           scheme: "bearer",
-          bearerFormat: "JWT",
-        },
-      },
+          bearerFormat: "JWT"
+        }
+      }
     },
-
     security: [
       {
-        bearerAuth: [],
-      },
-    ],
+        bearerAuth: []
+      }
+    ]
   },
-
-  apis: ["./routes/*.js"],
+  apis: ["./routes/*.js"]
 };
 
-const swaggerDocs = swaggerJsDoc(swaggerOptions);
+const specs = swaggerJsdoc(options);
 
-module.exports = swaggerDocs;
+module.exports = (app) => {
+  app.use(
+    "/api-docs",
+    swaggerUi.serve,
+    swaggerUi.setup(specs, {
+      swaggerOptions: {
+        defaultModelsExpandDepth: -1,   // hide schemas
+        displayRequestDuration: false,
+        docExpansion: "none",           // collapse all
+        filter: true,
+        showExtensions: false,
+        showCommonExtensions: false
+      }
+    })
+  );
+};
