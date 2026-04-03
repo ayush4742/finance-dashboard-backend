@@ -14,6 +14,20 @@ const options = {
         url: "https://finance-dashboard-backend-wu1m.onrender.com",
       },
     ],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
+    },
+    security: [
+      {
+        bearerAuth: [],
+      },
+    ],
   },
   apis: ["./routes/*.js"],
 };
