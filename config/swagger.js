@@ -10,7 +10,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: "http://localhost:5000",
+        url: "https://finance-dashboard-backend-wu1m.onrender.com",
       },
     ],
 
