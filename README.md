@@ -1,265 +1,333 @@
-# 🚀 Finance Dashboard Backend API
+# 💰 Finance Dashboard Backend API
 
-A **Finance Dashboard Backend API** built using **Node.js, Express, MongoDB, JWT Authentication, Role-Based Access Control, and Swagger Documentation**.
+A **Role-Based Finance Dashboard Backend** built using **Node.js, Express, MongoDB** with **JWT Authentication**, **RBAC**, **Swagger Documentation**, and **Dashboard Analytics APIs**.
 
-This backend provides APIs for **User Management, Financial Transactions, and Dashboard Analytics**.
-
----
-
-# 📘 API Documentation
-
-Swagger Documentation:
-
-🔗 https://finance-dashboard-backend-wu1m.onrender.com/api-docs/
+This project provides a secure and scalable backend for managing financial transactions and generating dashboard analytics.
 
 ---
 
-# 📂 GitHub Repository
+# 🚀 Live API Documentation
 
-🔗 https://github.com/ayush4742/finance-dashboard-backend
+Swagger UI
+👉 [https://finance-dashboard-backend-wu1m.onrender.com/api-docs/](https://finance-dashboard-backend-wu1m.onrender.com/api-docs/)
+
+GitHub Repository
+👉 [https://github.com/ayush4742/finance-dashboard-backend](https://github.com/ayush4742/finance-dashboard-backend)
 
 ---
 
 # ✨ Features
 
-* JWT Authentication
-* Role-Based Access Control
-* User Management
-* Transaction Management
-* Dashboard Analytics APIs
-* MongoDB Database
-* Swagger Documentation
-* Production Deployment (Render)
-* Secure Environment Variables
+* 🔐 JWT Authentication
+* 👥 Role Based Access Control (RBAC)
+* 💰 Transaction Management
+* 📊 Dashboard Analytics APIs
+* 📚 Swagger API Documentation
+* 🌐 Deployed on Render
+* 🔒 Secure Middleware Architecture
 
 ---
 
-# 🛠 Tech Stack
+# 👤 User Roles & Permissions
+
+| Role    | Access                     |
+| ------- | -------------------------- |
+| Admin   | Full Access                |
+| Analyst | Read + Create Transactions |
+| Viewer  | Read Only                  |
+
+---
+
+# 🛠️ Tech Stack
 
 * Node.js
 * Express.js
 * MongoDB
-* Mongoose
 * JWT Authentication
-* Swagger UI
-* Render
-* dotenv
-
----
-
-# 👥 User Roles
-
-| Role    | Permissions   |
-| ------- | ------------- |
-| Admin   | Full Access   |
-| Analyst | Create & View |
-| Viewer  | Read Only     |
-
----
-
-# 🔐 Authentication
-
-JWT-based Authentication is used to secure APIs.
-
-### Login API
-
-**POST** `/api/users/login`
-
-Example Request:
-
-```json
-{
-  "email": "admin@gmail.com",
-  "password": "123456"
-}
-```
-
-Response:
-
-```json
-{
-  "success": true,
-  "token": "jwt_token"
-}
-```
-
----
-
-# 👤 User APIs
-
-| Method | Endpoint         | Access         |
-| ------ | ---------------- | -------------- |
-| POST   | /api/users       | Admin          |
-| GET    | /api/users       | Admin, Analyst |
-| PUT    | /api/users/:id   | Admin          |
-| DELETE | /api/users/:id   | Admin          |
-| POST   | /api/users/login | Public         |
-
----
-
-# 💰 Transaction APIs
-
-| Method | Endpoint              | Access                 |
-| ------ | --------------------- | ---------------------- |
-| POST   | /api/transactions     | Admin, Analyst         |
-| GET    | /api/transactions     | Admin, Analyst, Viewer |
-| DELETE | /api/transactions/:id | Admin                  |
-
----
-
-# 📊 Dashboard APIs
-
-These APIs provide analytics for the finance dashboard.
-
-| Method | Endpoint                | Description                    |
-| ------ | ----------------------- | ------------------------------ |
-| GET    | /api/dashboard/summary  | Total income, expense, balance |
-| GET    | /api/dashboard/category | Category wise summary          |
-| GET    | /api/dashboard/monthly  | Monthly trends                 |
-| GET    | /api/dashboard/recent   | Recent transactions            |
-
----
-
-# 📈 Dashboard Example
-
-### GET /api/dashboard/summary
-
-Response:
-
-```json
-{
-  "success": true,
-  "data": {
-    "totalIncome": 25000,
-    "totalExpense": 5000,
-    "balance": 20000
-  }
-}
-```
-
----
-
-# 🔧 Installation
-
-Clone the repository
-
-```bash
-git clone https://github.com/ayush4742/finance-dashboard-backend.git
-```
-
-Install dependencies
-
-```bash
-npm install
-```
-
-Create `.env` file
-
-```
-MONGO_URI=your_mongo_uri
-JWT_SECRET=your_secret
-PORT=5000
-```
-
-Run server
-
-```bash
-npm run dev
-```
+* Swagger (OpenAPI 3.0)
+* Render (Deployment)
 
 ---
 
 # 📁 Project Structure
 
 ```
-finance-backend
+finance-dashboard-backend
+│
+├── config
+│   ├── db.js
+│   └── swagger.js
 │
 ├── controllers
 │   ├── userController.js
 │   ├── transactionController.js
 │   └── dashboardController.js
 │
+├── middleware
+│   ├── authMiddleware.js
+│   └── roleMiddleware.js
+│
 ├── routes
 │   ├── userRoutes.js
 │   ├── transactionRoutes.js
 │   └── dashboardRoutes.js
 │
-├── middleware
-│   ├── authMiddleware.js
-│   └── roleMiddleware.js
-│
-├── models
-│   ├── User.js
-│   └── Transaction.js
-│
-├── swagger.js
+├── .env
 ├── app.js
 └── package.json
 ```
 
 ---
 
-# 🔒 Environment Variables
+# 🚀 Getting Started
 
-Create `.env`
+## 1️⃣ Clone Repository
 
-```
-MONGO_URI=
-JWT_SECRET=
-PORT=
+```bash
+git clone https://github.com/ayush4742/finance-dashboard-backend.git
+cd finance-dashboard-backend
 ```
 
 ---
 
-# 🧪 Testing
+## 2️⃣ Install Dependencies
 
-APIs can be tested using:
-
-* Swagger UI
-* Postman
-* Curl
+```bash
+npm install
+```
 
 ---
 
-# 📘 API Documentation
+## 3️⃣ Setup Environment Variables
+
+Create `.env` file in root directory:
+
+```
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+PORT=5000
+```
+
+---
+
+## 4️⃣ Run Server
+
+```bash
+npm run dev
+```
+
+Server will run at:
+
+```
+http://localhost:5000
+```
 
 Swagger Documentation:
 
-https://finance-dashboard-backend-wu1m.onrender.com/api-docs/
+```
+http://localhost:5000/api-docs
+```
+
+---
+
+# 🔐 Authentication Flow
+
+### Step 1 — Create Demo Users
+
+POST
+
+```
+/api/users/seed
+```
+
+This creates:
+
+* Admin
+* Analyst
+* Viewer
+
+---
+
+### Step 2 — Login
+
+POST
+
+```
+/api/users/login
+```
+
+Example:
+
+```json
+{
+  "email": "admin@gmail.com",
+  "password": "admin123"
+}
+```
+
+---
+
+### Step 3 — Copy JWT Token
+
+Response:
+
+```json
+{
+  "token": "your_jwt_token"
+}
+```
+
+---
+
+### Step 4 — Authorize
+
+Click **Authorize** button in Swagger UI
+
+Paste:
+
+```
+Bearer your_token
+```
+
+---
+
+### Step 5 — Test APIs
+
+Now you can test:
+
+* Users APIs
+* Transactions APIs
+* Dashboard APIs
+
+---
+
+# 🔑 Demo Credentials
+
+## Admin
+
+```
+email: admin@gmail.com
+password: admin123
+```
+
+---
+
+## Analyst
+
+```
+email: analyst@gmail.com
+password: analyst123
+```
+
+---
+
+## Viewer
+
+```
+email: viewer@gmail.com
+password: viewer123
+```
+
+---
+
+# 📊 Dashboard APIs
+
+| Method | Endpoint                | Description         |
+| ------ | ----------------------- | ------------------- |
+| GET    | /api/dashboard/summary  | Dashboard Summary   |
+| GET    | /api/dashboard/category | Category Summary    |
+| GET    | /api/dashboard/monthly  | Monthly Trends      |
+| GET    | /api/dashboard/recent   | Recent Transactions |
+
+---
+
+# 💰 Transactions APIs
+
+| Method | Endpoint              | Description          |
+| ------ | --------------------- | -------------------- |
+| POST   | /api/transactions     | Create Transaction   |
+| GET    | /api/transactions     | Get All Transactions |
+| DELETE | /api/transactions/:id | Delete Transaction   |
+
+---
+
+# 👥 Users APIs
+
+| Method | Endpoint         | Description       |
+| ------ | ---------------- | ----------------- |
+| POST   | /api/users/seed  | Create Demo Users |
+| POST   | /api/users/login | Login User        |
+| POST   | /api/users       | Create User       |
+| GET    | /api/users       | Get Users         |
+| PUT    | /api/users/:id   | Update User       |
+| DELETE | /api/users/:id   | Delete User       |
+
+---
+
+# 🌍 Deployment
+
+Hosted on **Render**
+
+Base URL:
+
+```
+https://finance-dashboard-backend-wu1m.onrender.com
+```
+
+Swagger:
+
+```
+https://finance-dashboard-backend-wu1m.onrender.com/api-docs
+```
+
+---
+
+# 🔒 Security
+
+* JWT Authentication
+* Role-Based Authorization
+* Protected Routes
+* Secure Middleware
+
+---
+
+# 📌 API Testing
+
+You can test APIs using:
+
+* Swagger UI
+* Postman
+* Thunder Client
+
+---
+
+# 🧠 Architecture
+
+```
+Client
+  ↓
+Routes
+  ↓
+Controllers
+  ↓
+Middleware (Auth + Roles)
+  ↓
+MongoDB Database
+```
+
+---
+
+# 📄 License
+
+MIT License
 
 ---
 
 # 👨‍💻 Author
 
-**Ayush Samrat**
+**Ayush**
 
 GitHub
-https://github.com/ayush4742
+[https://github.com/ayush4742](https://github.com/ayush4742)
 
----
 
-# 🎯 Project Highlights
-
-* JWT Authentication
-* Role Based Authorization
-* Dashboard Analytics
-* MongoDB Aggregation
-* Swagger Documentation
-* Production Deployment
-
----
-
-# ✅ Project Status
-
-* Fully Functional
-* Production Ready
-* Deployed
-* Tested
-
----
-
-# 📌 Conclusion
-
-This Finance Dashboard Backend provides a scalable and secure backend architecture with role-based access control, analytics APIs, and complete Swagger documentation.
-
----
