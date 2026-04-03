@@ -21,11 +21,8 @@ app.use(
   "/api-docs",
   swaggerUi.serve,
   swaggerUi.setup(specs, {
-    explorer: true,
     swaggerOptions: {
-      docExpansion: "list",
-      filter: true,
-      defaultModelsExpandDepth: -1,
+      docExpansion: "none",
     },
   })
 );
