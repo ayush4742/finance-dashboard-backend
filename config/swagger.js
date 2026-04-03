@@ -7,7 +7,7 @@ const options = {
     info: {
       title: "Finance Dashboard API",
       version: "1.0.0",
-      description: "REST API for Finance Dashboard with Role Based Access Control",
+      description: "Finance Dashboard Backend API Documentation",
     },
 
     servers: [
@@ -17,6 +17,11 @@ const options = {
     ],
 
     tags: [
+      {
+        name: "Getting Started",
+        description:
+          "1. Create demo users → POST /api/users/seed \n 2. Login → POST /api/users/login \n 3. Click Authorize and paste token \n 4. Test APIs",
+      },
       {
         name: "Users",
         description: "Authentication & User Management",
