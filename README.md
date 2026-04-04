@@ -161,7 +161,7 @@ Example:
 ```json
 {
   "email": "admin@gmail.com",
-  "password": "admin123"
+  "password": "123456"
 }
 ```
 
@@ -207,7 +207,7 @@ Now you can test:
 
 ```
 email: admin@gmail.com
-password: admin123
+password: 123456
 ```
 
 ---
@@ -216,7 +216,7 @@ password: admin123
 
 ```
 email: analyst@gmail.com
-password: analyst123
+password: 123456
 ```
 
 ---
@@ -225,7 +225,7 @@ password: analyst123
 
 ```
 email: viewer@gmail.com
-password: viewer123
+password: 123456
 ```
 
 ---
