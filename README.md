@@ -230,11 +230,12 @@ Now you can test:
 
   ---
 # 💰 Transaction Fields Guide
-* **title** →Salary, Grocery, Rent
-* **amount** →5000
-* **type** → income,expense
-* **category** → salary,food,rent
-* 
+
+- *title* → Transaction name (Salary, Grocery, Rent)
+- *amount* → Transaction amount (5000)
+- *type* → income | expense
+- *category* → salary | food | rent
+
   ---
 
 ---
@@ -288,6 +289,57 @@ password: 123456
 | DELETE | /api/transactions/:id | Delete Transaction   |
 
 ---
+
+# 📄 Pagination
+
+Transactions API supports pagination.
+
+Example:
+
+GET /api/transactions?page=1&limit=5
+
+Query Parameters:
+
+- page → Page number
+- limit → Records per page
+
+- ---
+
+# 🔎 Filtering
+
+You can filter transactions using query parameters.
+
+Example:
+
+GET /api/transactions?type=expense
+
+Supported Filters:
+
+- type (income / expense)
+- category
+- date range
+
+---
+
+# 🔐 Authorization
+
+All protected APIs require JWT Token.
+  
+Authorization Header:
+  
+Authorization: Bearer <your_token>
+
+---
+
+# 🔒 Protected Routes
+
+  These routes require authentication:
+  
+  - Users APIs
+  - Transactions APIs
+  - Dashboard APIs
+
+  ---
 
 # 👥 Users APIs
 
@@ -354,6 +406,14 @@ You can test APIs using:
 
 ---
 
+# 🚀 Future Improvements
+
+- Frontend Dashboard Integration
+- Export Reports
+- Advanced Analytics
+- User Profile Management
+
+  ---
 
 
 # 👨‍💻 Author
