@@ -6,11 +6,11 @@ const userRoutes = require("./routes/userRoutes");
 const transactionRoutes = require("./routes/transactionRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 
-const { swaggerUi, specs } = require("./config/swagger");
+const { swaggerUi, specs, swaggerOptions } = require("./config/swagger");
 
 const app = express();
 
-// Connect DB
+// Connect Database
 connectDB();
 
 // Middleware
@@ -21,9 +21,13 @@ app.use(
   "/api-docs",
   swaggerUi.serve,
   swaggerUi.setup(specs, {
+    explorer: true,
     swaggerOptions: {
       docExpansion: "none",
-    },
+      filter: true,
+      showExtensions: true,
+      showCommonExtensions: true
+    }
   })
 );
 
@@ -41,5 +45,5 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(Server running on port ${PORT});
 });

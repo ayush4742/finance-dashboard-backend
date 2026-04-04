@@ -10,8 +10,8 @@ const options = {
       description: `
 Finance Dashboard Backend API Documentation
 
-📘 **Documentation:**  
-[📖 View Full README Guide](https://github.com/ayush4742/finance-dashboard-backend?tab=readme-ov-file#-authentication-flow) 
+📘 *Documentation:*  
+[📖 View Full README Guide](https://github.com/ayush4742/finance-dashboard-backend)
 
 `,
     },
@@ -20,6 +20,10 @@ Finance Dashboard Backend API Documentation
       {
         url: "https://finance-dashboard-backend-wu1m.onrender.com",
         description: "Production Server",
+      },
+      {
+        url: "http://localhost:5000",
+        description: "Local Server",
       },
     ],
 
@@ -60,7 +64,17 @@ Finance Dashboard Backend API Documentation
 
 const specs = swaggerJsdoc(options);
 
+const swaggerOptions = {
+  explorer: true,
+  swaggerOptions: {
+    filter: true,
+    showExtensions: true,
+    showCommonExtensions: true,
+  },
+};
+
 module.exports = {
   swaggerUi,
   specs,
+  swaggerOptions
 };
