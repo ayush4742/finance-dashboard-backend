@@ -26,6 +26,9 @@ Swagger UI
 GitHub Repository
 👉 [https://github.com/ayush4742/finance-dashboard-backend](https://github.com/ayush4742/finance-dashboard-backend)
 
+
+Watch live project demo here 👉 https://drive.google.com/file/d/1m6ojhoxk5rxobaRmBlBSCSDzJMp6OPmN/view?usp=drivesdk
+
 ---
 
 # ✨ Features
