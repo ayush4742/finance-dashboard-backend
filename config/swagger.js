@@ -12,6 +12,7 @@ Finance Dashboard Backend API Documentation
 
 📘 *Documentation:*  
 [📖 View Full README Guide](https://github.com/ayush4742/finance-dashboard-backend?tab=readme-ov-file#-authentication-flow)
+[📖 Live Demo Video ](https://drive.google.com/file/d/1m6ojhoxk5rxobaRmBlBSCSDzJMp6OPmN/view)
 
 `,
     },
