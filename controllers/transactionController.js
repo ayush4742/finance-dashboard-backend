@@ -56,7 +56,7 @@ exports.getTransactions = async (req, res) => {
     const transactions = await Transaction.find(query)
       .skip((page - 1) * limit)
       .limit(Number(limit))
-      .sort({ date: -1 });
+      .sort({ createdAt: -1 });
 
     const total = await Transaction.countDocuments(query);
 

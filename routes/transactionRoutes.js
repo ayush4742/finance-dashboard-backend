@@ -53,10 +53,36 @@ router.post("/", authMiddleware, authorizeRoles("admin", "analyst"), createTrans
  * @swagger
  * /api/transactions:
  *   get:
- *     summary: Get All Transactions
+ *     summary: Get All Transactions (Pagination + Search + Filter)
  *     tags: [Transactions]
  *     security:
  *       - bearerAuth: []
+ *     parameters:
+ *       - in: query
+ *         name: page
+ *         schema:
+ *           type: integer
+ *         description: Page number
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *           type: integer
+ *         description: Number of records per page
+ *       - in: query
+ *         name: search
+ *         schema:
+ *           type: string
+ *         description: Search transactions
+ *       - in: query
+ *         name: type
+ *         schema:
+ *           type: string
+ *         description: Filter by type (income / expense)
+ *       - in: query
+ *         name: category
+ *         schema:
+ *           type: string
+ *         description: Filter by category
  *     responses:
  *       200:
  *         description: List of transactions
