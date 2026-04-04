@@ -228,6 +228,15 @@ Now you can test:
 * Transactions APIs
 * Dashboard APIs
 
+  ---
+# 💰 Transaction Fields Guide
+* **title** →Salary, Grocery, Rent
+* **amount** →5000
+* **type** → income,expense
+* **category** → salary,food,rent
+* 
+  ---
+
 ---
 
 # 🔑 Demo Credentials
