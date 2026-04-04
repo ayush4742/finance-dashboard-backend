@@ -5,6 +5,18 @@ A **Role-Based Finance Dashboard Backend** built using **Node.js, Express, Mongo
 This project provides a secure and scalable backend for managing financial transactions and generating dashboard analytics.
 
 ---
+# 🎯 Assignment Objective
+
+This project was built to demonstrate:
+
+* Backend Architecture Design
+* Role-Based Access Control
+* Financial Data Processing
+* Dashboard Analytics
+* API Design & Documentation
+* Data Validation & Error Handling
+
+---
 
 # 🚀 Live API Documentation
 
@@ -25,6 +37,7 @@ GitHub Repository
 * 📚 Swagger API Documentation
 * 🌐 Deployed on Render
 * 🔒 Secure Middleware Architecture
+* 🧠 Clean Backend Architecture
 
 ---
 
@@ -46,6 +59,22 @@ GitHub Repository
 * JWT Authentication
 * Swagger (OpenAPI 3.0)
 * Render (Deployment)
+
+---
+
+# 🏗️ Backend Architecture
+
+```
+Client
+  ↓
+Routes
+  ↓
+Controllers
+  ↓
+Middleware (Auth + Roles)
+  ↓
+MongoDB Database
+```
 
 ---
 
@@ -264,6 +293,21 @@ password: 123456
 
 ---
 
+# 🧪 Validation & Error Handling
+* Input validation
+* Proper status codes
+* Error responses
+* Role restriction validation
+
+---
+
+# 💾 Data Persistence
+* MongoDB
+* Mongoose Schema
+* Structured Models
+
+---
+
 # 🌍 Deployment
 
 Hosted on **Render**
@@ -301,27 +345,7 @@ You can test APIs using:
 
 ---
 
-# 🧠 Architecture
 
-```
-Client
-  ↓
-Routes
-  ↓
-Controllers
-  ↓
-Middleware (Auth + Roles)
-  ↓
-MongoDB Database
-```
-
----
-
-# 📄 License
-
-MIT License
-
----
 
 # 👨‍💻 Author
 
